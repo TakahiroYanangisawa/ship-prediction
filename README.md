@@ -2,11 +2,11 @@ ship-prediction
 ===============
 ### data_sort  
 船舶動向予測技術評価のための一ヶ月分の実データを用意する。  
-### DevidedFiles.java  
+#### DevidedFiles.java  
 デコードされたAIS type1 メッセージをDevideFiles.javaにて一ヶ月毎のcsvファイルに分割する。  
 csv形式のAISデータを一行毎に読み込みAISデータのタイムスタンプで１２ヵ月分に分割する。   最終行まで読み込むとプログラムは終了する。  
 出力には"年月_メッセージタイプ"をファイル名とするcsvファイルを得る。  
-### mmsi_sort.java  
+#### mmsi_sort.java  
 DevidedFiles.javaによって分割されたcsvファイルをさらにMMSI番号毎にソートし新たなcsvファイルに保存する。  
 DecidedFiles.javaによって分割されたcsvファイルを１行毎に読み込み、MMSI番号とそれに付随する船舶データを  
 配列に保持する。最終行まで読み込むとプログラムは終了する。  
