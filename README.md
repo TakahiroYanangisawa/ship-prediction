@@ -1,6 +1,6 @@
 ship-prediction
 ===============
-　　##data_sort##  
+　　##data_sort  
 　　船舶動向予測技術評価のための一ヶ月分の実データを用意する。　　
   　　DevidedFiles.java
   　　デコードされたAIS type1 メッセージをDevideFiles.javaにて一ヶ月毎のcsvファイルに分割する。
