@@ -27,15 +27,15 @@ DecidedFiles.javaによって分割されたcsvファイルを１行毎に読み
 
 ===============
 ## Liner  
-座標変換
-船舶のオブジェクト化
-線形予測を行う際の平均誤差距離・分散計算  
+座標変換  
+船舶のオブジェクト化  
+線形予測を行う際の平均誤差距離・分散計算    
 
 ===============
 ### ENU.java  
 測地座標系で表現されている船舶GPS位置情報をECEF座標系及びENU座標系に相互変換する。
 [理解するためのGPS測位計算プログラム入門](http://www.enri.go.jp/~fks442/K_MUSEN/1st/1st021118.pdf)  
-を参考にJavaで作成した。  
+を参考にJavaで各メソッドを作成した。  
 #### ChangToECEF(double, double)
 測地座標で表される船舶位置をECEF座標に変換する。
 2種類のdouble型引数（緯度・経度）をとり、戻り値にdouble型配列(X,Y,Z)を得る。  
@@ -53,4 +53,13 @@ ENU座標の原点となる測地座標のdouble型2種(lat, lon)を引数にと
 ECEF座標を測地座標に変換する。  
 ECEF座標が保持されたdouble型配列(X,Y,Z)を引数にとり、  
 変換された測地座標がdouble型配列(lat,lon,height)で戻り値として得られる。  
+#### getENU_Err(Matrix, double, double)  
+船舶動向予測技術によって予測された船舶位置とAISデータの位置との距離を算出する。  
+ENU座標上にてAISの位置が表されるMatrix型(e,n,u)と、同じくENU座標上で予測位置が表されるdouble型2種(e,n)を引数にとり、  
+これらの距離がdouble型で戻り値として得られる。  
+#### multi_mat(double[][], double[][])  
+行列の積を行うメソッド  
+行列を表すdouble型配列2種類を引数にとり  
+これらの積がdouble型で戻り値として得られる。  
+
 
