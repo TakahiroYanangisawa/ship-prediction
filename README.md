@@ -33,4 +33,17 @@ DecidedFiles.javaによって分割されたcsvファイルを１行毎に読み
 
 ===============
 ### ENU.java  
+測地座標系で表現されている船舶GPS位置情報をECEF座標系及びENU座標系に相互変換する。
+[理解するためのGPS測位計算プログラム入門](http://www.enri.go.jp/~fks442/K_MUSEN/1st/1st021118.pdf)を参考に  
+Javaで作成した。  
+#### ChangToECEF(double, double)
+測地座標で表される船舶位置をECEF座標に変換する。
+2種類のdouble型引数（緯度・経度）をとり、戻り値にdouble型配列(X,Y,Z)を得る。  
+#### ChangeToENU(double[][], double[][],double, double)
+ECEF座標で表される2点を、一方を原点とするENU座標に変換する。  
+double型配列2種類(原点とするECEF座標ともう一方のECEF座標)及びdouble型引数2種類（原点の緯度・経度）を引数にとり  
+3行1列のMatrix型(e,n,u)の戻り値を得る。  
+""""
+
+
 
